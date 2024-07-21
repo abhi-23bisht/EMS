@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1  class="text-center my-3">Signup Page</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card bg-info-subtle">
+            <div class="card-body">
+
+              <form method="POST" action="/ems/signup/">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" class="form-control" placeholder="Username">
+                </div>
+
+                 {% comment %} <div class="mb-3">
+                  <label for="id">Email</label>
+                  <input id="email" name="id" type="email" class="form-control" placeholder="Email">
+                </div>  {% endcomment %}
+
+                <div class="mb-3">
+                  <label for="password">Password</label>
+                  <input id="password" name="password" type="password" class="form-control" placeholder="password">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cpassword">Confirm Password</label>
+                    <input id="cpassword" name="cpassword" type="password" class="form-control" placeholder="Confirm password">
+                  </div>
+
+                <button type="submit" class="btn btn-primary">Signup</button>
+                <p>Already signup please!<a href="/ems/login/" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Login</a></p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
